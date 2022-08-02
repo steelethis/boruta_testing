@@ -47,6 +47,16 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :boruta, Boruta.Oauth,
+  repo: BorutaExample.Repo,
+  issuer: "http://localhost:4000"
+
+config :boruta, Boruta.Oauth,
+  repo: BorutaExample.Repo,
+  contexts: [
+    resource_owners: BorutaExample.ResourceOwners
+  ]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

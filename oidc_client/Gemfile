@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gem "rack"
+gem "net"
+gem "net-smtp"
+gem "securerandom"
+gem "rack_csrf"
+gem "roda"
+gem "tilt"
+gem "omniauth_openid_connect"
+gem "webrick"

@@ -89,4 +89,38 @@ defmodule BorutaExampleWeb.Router do
     get "/users/confirm/:token", UserConfirmationController, :edit
     post "/users/confirm/:token", UserConfirmationController, :update
   end
+
+  scope "/.well-known", BorutaExampleWeb.Openid do
+    pipe_through [:api]
+
+    get "/openid-configuration", UserinfoController, :discovery
+  end
+
+  scope "/oauth", BorutaExampleWeb.Oauth do
+    pipe_through :api
+
+    post "/revoke", RevokeController, :revoke
+    post "/token", TokenController, :token
+    post "/introspect", IntrospectController, :introspect
+  end
+
+  scope "/oauth", BorutaExampleWeb.Oauth do
+    pipe_through [:browser, :fetch_current_user]
+
+    get "/authorize", AuthorizeController, :authorize
+  end
+
+  scope "/openid", BorutaExampleWeb.Openid do
+    pipe_through [:browser, :fetch_current_user]
+
+    get "/userinfo", UserinfoController, :userinfo
+    post "/userinfo", UserinfoController, :userinfo
+    get "/jwks", JwksController, :jwks_index
+  end
+
+  scope "/openid", BorutaExampleWeb.Openid do
+    pipe_through [:browser, :fetch_current_user]
+
+    get "/authorize", AuthorizeController, :authorize
+  end
 end

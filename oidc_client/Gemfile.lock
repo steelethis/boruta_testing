@@ -1,0 +1,105 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (7.0.3.1)
+      activesupport (= 7.0.3.1)
+    activesupport (7.0.3.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    aes_key_wrap (1.1.0)
+    attr_required (1.0.1)
+    bindata (2.4.10)
+    concurrent-ruby (1.1.10)
+    digest (3.1.0)
+    hashie (5.0.0)
+    httpclient (2.8.3)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
+    json-jwt (1.14.0)
+      activesupport (>= 4.2)
+      aes_key_wrap
+      bindata
+    mail (2.7.1)
+      mini_mime (>= 0.1.1)
+    mini_mime (1.1.2)
+    minitest (5.16.2)
+    net (0.3.3)
+      activesupport
+    net-protocol (0.1.3)
+      timeout
+    net-smtp (0.3.1)
+      digest
+      net-protocol
+      timeout
+    omniauth (2.1.0)
+      hashie (>= 3.4.6)
+      rack (>= 2.2.3)
+      rack-protection
+    omniauth_openid_connect (0.4.0)
+      addressable (~> 2.5)
+      omniauth (>= 1.9, < 3)
+      openid_connect (~> 1.1)
+    openid_connect (1.3.0)
+      activemodel
+      attr_required (>= 1.0.0)
+      json-jwt (>= 1.5.0)
+      rack-oauth2 (>= 1.6.1)
+      swd (>= 1.0.0)
+      tzinfo
+      validate_email
+      validate_url
+      webfinger (>= 1.0.1)
+    public_suffix (4.0.7)
+    rack (2.2.4)
+    rack-oauth2 (1.21.2)
+      activesupport
+      attr_required
+      httpclient
+      json-jwt (>= 1.11.0)
+      rack (>= 2.1.0)
+    rack-protection (2.2.2)
+      rack
+    rack_csrf (2.6.0)
+      rack (>= 1.1.0)
+    roda (3.58.0)
+      rack
+    securerandom (0.2.0)
+    swd (1.3.0)
+      activesupport (>= 3)
+      attr_required (>= 0.0.5)
+      httpclient (>= 2.4)
+    tilt (2.0.11)
+    timeout (0.3.0)
+    tzinfo (2.0.5)
+      concurrent-ruby (~> 1.0)
+    validate_email (0.1.6)
+      activemodel (>= 3.0)
+      mail (>= 2.2.5)
+    validate_url (1.0.15)
+      activemodel (>= 3.0.0)
+      public_suffix
+    webfinger (1.2.0)
+      activesupport
+      httpclient (>= 2.4)
+    webrick (1.7.0)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  net
+  net-smtp
+  omniauth_openid_connect
+  rack
+  rack_csrf
+  roda
+  securerandom
+  tilt
+  webrick
+
+BUNDLED WITH
+   2.3.7

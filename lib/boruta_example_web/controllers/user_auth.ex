@@ -26,6 +26,7 @@ defmodule BorutaExampleWeb.UserAuth do
   """
   def log_in_user(conn, user, params \\ %{}) do
     token = Accounts.generate_user_session_token(user)
+    Accounts.update_last_login_at!(user)
     user_return_to = get_session(conn, :user_return_to)
 
     conn
@@ -81,7 +82,7 @@ defmodule BorutaExampleWeb.UserAuth do
     conn
     |> renew_session()
     |> delete_resp_cookie(@remember_me_cookie)
-    |> redirect(to: "/")
+    |> redirect(to: Routes.user_session_path(conn, :new))
   end
 
   @doc """

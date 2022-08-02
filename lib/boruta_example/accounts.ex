@@ -226,6 +226,10 @@ defmodule BorutaExample.Accounts do
     token
   end
 
+  def update_last_login_at!(user) do
+    user |> User.login_changeset() |> Repo.update!()
+  end
+
   @doc """
   Gets the user with the given signed token.
   """
